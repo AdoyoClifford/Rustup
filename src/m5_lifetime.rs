@@ -49,3 +49,29 @@ fn example_2() {
         }
     }
 }
+
+#[allow(dead_code, unused_variables)]
+fn example_3_generics(){
+    let highest_age: &f32;
+
+    let alice_age: Person = Person{name: "Alice", points: &20.2};
+    let bob_age: Person = Person{name: "Bob", points: &20.0};
+
+    
+
+    highest_age = find_largest::<f32>(&alice_age.points, &bob_age.points);
+    println!("Highest age is{}",highest_age);
+
+    fn find_largest<'a, T: PartialOrd>(compare_1: &'a T, compare_2: &'a T)-> &'a T{
+        if compare_1 > compare_2 {
+            compare_1
+        } else {
+            compare_2
+        }
+    }
+}
+
+struct Person<'p> {
+    name: & 'p str,
+    points: &'p f32
+}

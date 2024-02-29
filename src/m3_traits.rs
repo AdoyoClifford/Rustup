@@ -1,7 +1,7 @@
 trait Attacker {
     fn choose_style(&self) -> String;
 }
-
+#[allow(dead_code, unused_variables)]
 #[derive(Debug)]
 enum Character {
     Worrior,
@@ -18,7 +18,7 @@ impl Attacker for Character {
         }
     }
 }
-
+#[allow(dead_code, unused_variables)]
 #[cfg(test)]
 
 mod test {

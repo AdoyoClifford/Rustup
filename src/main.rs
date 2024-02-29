@@ -3,7 +3,9 @@ mod m2_stucts;
 mod m3_traits;
 mod m4_polymorphism;
 mod m5_lifetime;
+mod m6_patterns;
 
+#[allow(dead_code, unused_variables)]
 const OUR_COURSE: &str = "Rust with AutoGpt";
 
 fn main() {
